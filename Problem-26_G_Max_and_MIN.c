@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+void maxMin (){
+    int n;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for (int i = 0; i < n; i++){
+        scanf("%d", &a[i]);
+    }
+
+    for (int i = 0; i < n-1; i++){
+        for(int j = 0; j < n-i-1; j++){
+            if(a[j] > a[j+1]){
+                int tmp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = tmp;
+            }
+        }
+    }
+    printf("%d %d", a[0], a[n-1]);
+    
+}
+
+
+int main()
+{
+    maxMin();
+
+    return 0;
+}
